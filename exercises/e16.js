@@ -6,6 +6,14 @@ import { data } from "../data/data";
 
 export function getGreatestDiscoveryYear(data) {
   // Your code goes here...
+  const discovery = data.asteroids
+    .map(asteroid => asteroid.discoveryYear)
+    .reduce((acc, year) => { acc[year] = (acc[year] || 0) + 1; return acc; }, {});
+  
+  return Object.keys(discovery).reduce((acc, year) => {
+    if (discovery[year] > discovery[acc]) { return year; }
+    return acc;
+  });
 }
 
 

@@ -9,6 +9,16 @@ export function minBy(array, cb) {
     }
   }
   return minElement;
+
+  /*
+  let minValue = array[0]
+  for (let elm of array) {
+    if (cb(elm) < cb(minValue)) {
+      minValue = elm;
+    }
+  }
+  return minElement;
+  */
 }
 
 export function maxBy(array, cb) {
@@ -22,4 +32,14 @@ export function maxBy(array, cb) {
     }
   }
   return maxElement;
+
+  /*
+  let maxValue = array[0]
+  for (let elm of array) {
+    if (cb(elm) > cb(maxValue)) {
+      maxValue = elm;
+    }
+  }
+  return maxValue;
+  */
 }
